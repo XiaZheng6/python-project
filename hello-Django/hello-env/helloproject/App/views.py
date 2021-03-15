@@ -5,3 +5,12 @@ from django.shortcuts import render
 
 def hello(request):
     return HttpResponse('双击666')
+
+def haha(request):
+    return HttpResponse()
+
+def index(request):
+    return render(request, 'index.html')
+
+def home(request):
+    return render(request,'home.html')
