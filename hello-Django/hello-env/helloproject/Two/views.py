@@ -35,3 +35,27 @@ def get_students(request):
 
     # return HttpResponse('students list')
     return render(request,'student_list.html',context=context)
+
+
+def baidu(request):
+    return render(request,'baidu.html')
+
+
+def update_student(request):
+
+    student = Student.objects.get(pk=2)
+
+    student.s_name = 'Jack'
+
+    student.save()
+
+    return HttpResponse('student update success')
+
+
+def delete_student(request):
+
+    student = Student.objects.get(pk=1)
+
+    student.delete()
+
+    return HttpResponse('student delete success!!!')
